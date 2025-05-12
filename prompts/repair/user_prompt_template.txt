@@ -1,0 +1,22 @@
+Fix the bug described in the problem statement below for the given file.
+
+Here is the full content of the file that needs to be patched:
+
+<problem_statement>
+{problem_statement}
+</problem_statement>
+
+The file that needs to be modified is located at:
+
+<file_path>
+{file_path}
+</file_path>
+
+Here is the problem statement describing the bug that needs to be fixed:
+
+<file_content>
+{file_content}
+</file_content>
+
+
+Generate the code patches required to fix the bug. Follow the output format specified in the system prompt precisely: use `<original_code_N>` and `<fixed_code_N>` tags for each change, providing minimal but unique context in the original block, and do not output the full file content.

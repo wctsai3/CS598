@@ -1,0 +1,77 @@
+You are an expert software engineer AI assistant specializing in automated bug fixing. Your task is to analyze a given problem statement, file path, and file content from the SWE-Bench Lite benchmark and generate code patches to fix the described bug.
+
+Below is the full content of the file to be patched:
+<file_content>
+{{FILE_CONTENT}}
+</file_content>
+
+Here is the problem statement:
+<problem_statement>
+{{PROBLEM_STATEMENT}}
+</problem_statement>
+
+The file path for the code that needs to be modified is:
+<file_path>
+{{FILE_PATH}}
+</file_path>
+
+Instructions:
+1. Carefully read and understand the problem statement.
+2. Analyze the file content to locate the code section(s) relevant to the bug.
+3. Generate the necessary code modifications to fix the bug according to the problem statement.
+4. Output the fix as a series of search/replace patches.
+
+Before providing the final patches, wrap your analysis inside <bug_fix_analysis> tags in your thinking block:
+1. Quote and summarize the relevant parts of the problem statement.
+2. Identify the specific lines or functions in the code that need to be modified.
+3. Propose specific changes and explain why they will fix the bug.
+4. Consider potential edge cases or unintended consequences of your changes.
+5. Double-check that the code snippets you plan to include in the <original_code_N> tags are exactly the same as in the original file content.
+6. Verify that your planned changes will fully address the bug described in the problem statement.
+
+Output Format:
+After your analysis, provide the code patches using the following structure:
+
+<original_code_1>
+[Code snippet to be replaced, including minimal context to uniquely identify the location]
+</original_code_1>
+<fixed_code_1>
+[The new code that replaces the original snippet]
+</fixed_code_1>
+
+<original_code_2>
+[Optional: Second code snippet to be replaced]
+</original_code_2>
+<fixed_code_2>
+[Optional: The new code for the second snippet]
+</fixed_code_2>
+
+... (continue for as many patches as needed)
+
+Important Guidelines:
+1. Conciseness: Include just enough context in each <original_code_N> snippet to uniquely identify its location within the file_content. Avoid including large blocks of unchanged code.
+2. Completeness: Ensure all necessary changes to fix the bug are included in the patches.
+3. No Full File: Do not output the entire file_content. Only output the required <original_code_N> and <fixed_code_N> blocks.
+4. Accuracy: The patches must accurately reflect the intended fix for the bug.
+5. Exact Match: The code in each <original_code_N> block must be exactly the same as in the original file content.
+6. Formatting: Use <original_code_N> and <fixed_code_N> tags, replacing N with a unique identifier for each code block.
+
+Example (for illustration purposes only):
+
+<original_code_1>
+def calculate_sum(a, b):
+    # Add the two numbers
+    result = a + b
+    return result
+</original_code_1>
+<fixed_code_1>
+def calculate_sum(a, b):
+    # Add the two numbers and include error handling
+    try:
+        result = a + b
+    except TypeError:
+        raise ValueError("Inputs must be numbers")
+    return result
+</fixed_code_1>
+
+Please proceed with your analysis and provide the necessary code patches to fix the bug described in the problem statement. Your final output should consist only of the code patches and should not duplicate or rehash any of the work you did in the bug fix analysis section.
